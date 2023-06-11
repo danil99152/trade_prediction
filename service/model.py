@@ -19,9 +19,8 @@ class ModelService:
         logging.debug(data)
         try:
             values = list(data.dict().values())
-            columns = list(settings.cat_columns.keys())
-            cat_var = list(filter(lambda x: settings.cat_columns[x], settings.cat_columns))
-            values = pd.DataFrame([values], columns=columns)
+            cat_var = settings.cat_columns
+            values = pd.DataFrame([values], columns=list(data.dict().keys()))
             values[cat_var] = values[cat_var].astype("category")
             pred = self.model.predict_proba(values)[0][1]
             # self.repository.save(data)

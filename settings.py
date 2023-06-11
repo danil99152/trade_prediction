@@ -16,11 +16,6 @@ class Settings(BaseSettings):
     # MODEL_REQUEST_QUEUE: constr(min_length=1, max_length=255) = 'MODEL_REQUEST_QUEUE'
     MODEL_PATH = str(pathlib.Path(__file__).parent.resolve()) + "/resources/catboost"
 
-    cat_columns: dict = {
-        'customer_legal_form': "Номер заказчика",
-        'supplier_legal_form': "Номер поставщика",
-        'product_code': "Номер продукта"
-    }
-
+    cat_columns: list = ['customer_legal_form', 'supplier_legal_form', 'product_code']
 
 settings = Settings()
