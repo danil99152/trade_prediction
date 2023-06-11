@@ -21,7 +21,7 @@ class ModelService:
             values = list(data.dict().values())
             cat_var = settings.cat_columns
             values = pd.DataFrame([values], columns=list(data.dict().keys()))
-            values[cat_var] = values[cat_var].astype("category")
+            values[cat_var] = values[cat_var].astype("str").astype('category')
             pred = self.model.predict_proba(values)[0][1]
             # self.repository.save(data)
             return f'{int(pred * 100)}%'
