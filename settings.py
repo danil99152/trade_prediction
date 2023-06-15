@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 from pydantic import BaseSettings, conint, constr
@@ -17,5 +18,8 @@ class Settings(BaseSettings):
     MODEL_PATH = str(pathlib.Path(__file__).parent.resolve()) + "/resources/catboost"
 
     cat_columns: list = ['customer_legal_form', 'supplier_legal_form', 'product_code']
+
+    contract_path = os.path.abspath('C:\csv\contracts.csv')
+
 
 settings = Settings()

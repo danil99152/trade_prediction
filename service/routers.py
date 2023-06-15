@@ -20,4 +20,13 @@ async def get_result(data: Analysis) -> str | dict:
         response = await api.analyse(data)
         return response
     except Exception as e:
-        return f'Exception at upload_matrix: {e}'
+        return f'Exception at get_result: {e}'
+
+
+@router.post('/get-history/', response_class=JSONResponse)
+async def get_history(data: dict) -> str:
+    try:
+        response = await api.get_history(data)
+        return response
+    except Exception as e:
+        return f'Exception at get_history: {e}'

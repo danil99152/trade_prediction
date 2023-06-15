@@ -20,3 +20,9 @@ class ModelApi:
         logging.debug(data)
         result = self.model.analyse(data)
         return result
+
+    async def get_history(self, data: dict) -> str:
+        logging.debug(data)
+        value = int(data.get('inn_supp'))
+        result = self.model.get_history(value)
+        return result

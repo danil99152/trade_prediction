@@ -27,6 +27,22 @@
         <fieldset id='response'></fieldset><br/>
 </fieldset>
 
+<fieldset>
+<legend>
+    <h1>Получить историю поставщика</h1>
+</legend>
+    <label for="inn_supp">Инн поставщика</label>
+    <input type='number' id="inn_supp"/>
+    <br/>
+</fieldset>
+<fieldset>
+    <button id='submit-config-history' onclick="getHistory()"> Отправить </button>
+</fieldset>
+<fieldset>
+        <label for="history-response"> История поставщика: </label><br/>
+        <fieldset id='history-response'></fieldset><br/>
+</fieldset>
+
 <script>
     async function submitButton(){
         const body = JSON.stringify({
@@ -45,5 +61,20 @@
             body: body
         });
         document.getElementById('response').innerHTML = await response.json();
+    }
+
+    async function getHistory(){
+        const body = JSON.stringify({
+            'inn_supp': document.getElementById('inn_supp').value,
+        });
+        let response = await fetch('/get-history/', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: body
+        });
+        document.getElementById('history-response').innerHTML = await response.json();
     }
 </script>
