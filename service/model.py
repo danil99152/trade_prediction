@@ -47,3 +47,24 @@ class ModelService:
         et = len(supp[(supp['current_contract_stage'] == 'ET')])
         return f'Хорошо проведенные: {ec} ' \
                f'Плохо проведенные: {et}'
+
+
+    # def get_history(self, value: int) -> str:
+    #     try:
+    #         statement = select(supplier).where(supplier.c.inn == value)
+    #         with self.engine.connect() as conn:
+    #             result = conn.execute(statement).fetchall()
+    #             conn.commit()
+    #         response = pd.DataFrame([], columns=list(*Supplier.__annotations__))
+    #         for res in result:
+    #             d = {}
+    #             for key, value in zip(Supplier.__annotations__, res):
+    #                 d[key] = value
+    #             response = pd.concat([response, pd.DataFrame(data=d)], ignore_index=True)
+    #
+    #         ec = len(response[(response['current_contract_stage'] == 'EC')])
+    #         et = len(response[(response['current_contract_stage'] == 'ET')])
+    #         return f'Хорошо проведенные: {ec} ' \
+    #                f'Плохо проведенные: {et}'
+    #     except Exception as e:
+    #         return f"exception at get_history: {e}"
