@@ -3,7 +3,7 @@ numpy==1.24.3
 pandas==2.0.2
 requests==2.31.0
 snuggs==1.4.7
-fastapi==0.96.1
+fastapi==0.97.0
 uvicorn==0.22.0
 catboost==1.2
 Jinja2==3.1.2

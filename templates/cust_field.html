@@ -1,0 +1,7 @@
+<label for="customer_legal_form">Номер заказчика</label>
+<select name="Номер заказчика" id="customer_legal_form"/>
+{% for key, value in custs.items() %}
+    <option value={{key}}>{{value}}</option>
+{% endfor %}
+</select>
+<br/>

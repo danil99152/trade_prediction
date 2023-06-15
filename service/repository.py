@@ -2,7 +2,7 @@ from sqlalchemy import text
 from sqlalchemy.engine import Engine
 
 
-class EEGRepository:
+class Repository:
     __slots__ = ["engine"]
 
     def __init__(self, engine: Engine):

@@ -2,17 +2,14 @@
 <legend>
     <h1>Предсказание закупок</h1>
 </legend>
-    <label for="customer_legal_form">Номер заказчика</label>
-    <input type='number' id="customer_legal_form"/>
-    <br/>
+    {% set custs = custs %}
+    {% include 'cust_field.html' %}
 
-    <label for="supplier_legal_form">Номер поставщика</label>
-    <input type='number' id="supplier_legal_form"/>
-    <br/>
+    {% set supps = supps %}
+    {% include 'supp_field.html' %}
 
-    <label for="product_code">Номер продукта</label>
-    <input type='text' id="product_code"/>
-    <br/>
+    {% set okpd = okpd %}
+    {% include 'product_field.html' %}
 
     <label for="time">Время исполнения (в днях)</label>
     <input type='number' id="time"/>

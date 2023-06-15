@@ -1,0 +1,7 @@
+<label for="product_code">Номер продукта</label>
+<select name="Номер продукта" id="product_code"/>
+{% for key, value in okpd.items() %}
+    <option value={{key}}>{{value}}</option>
+{% endfor %}
+</select>
+<br/>

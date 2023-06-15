@@ -1,0 +1,7 @@
+<label for="supplier_legal_form">Номер поставщика</label>
+<select name="Номер поставщика" id="supplier_legal_form"/>
+{% for key, value in supps.items() %}
+    <option value={{key}}>{{value}}</option>
+{% endfor %}
+</select>
+<br/>
